@@ -3,15 +3,20 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # або master, якщо у тебе так називається основна гілка
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-     - uses: peaceiris/actions-gh-pages@v4.4.2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
+      - name: Setup Pages
+        uses: actions/setup-pages@v3
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./  # якщо index.html у корені репозиторію
