@@ -1,0 +1,576 @@
+/* ============================
+   1. Global Variables & Reset
+============================ */
+:root {
+  --main-bg: #faf9f7;
+  --accent-dark: #5a6b5d;
+  --accent-light: #a8c3b0;
+  --beige: #f3ede7;
+  --text: #2f2f2f;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--main-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================
+   2. Typography & Containers
+============================ */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================
+   3. Button Styles
+============================ */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+.btn--primary:hover {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+}
+
+.btn--ghost {
+  border: 2px solid var(--accent-dark);
+  color: var(--accent-dark);
+}
+.btn--ghost:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+/* ============================
+   4. Header
+============================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /*background: var(--accent-dark);*/
+  background: linear-gradient(
+   135deg,
+   rgba(90, 107, 93, 0.9) 0%,   /* варіант з темним акцентом */
+   rgba(168, 195, 176, 0.8) 100%
+  );
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo img {
+  border-radius: 50%;
+  max-height: 50px;
+}
+
+.nav-links {
+  font-size: 17px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 600;
+}
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+.lang-switch button{
+ font-size: 16px;
+ font-weight: bold;
+ margin-left: auto; /* щоб мова йшла вправо */
+}
+/* ============================
+   5. About Section
+============================ */
+:root {
+  --accent-dark: #5a6b5d;
+  --accent-light: #a8c3b0;
+  --text-light: #fff;
+}
+
+/* ====================
+   Блок About
+==================== */
+.about-section {
+  background: linear-gradient(
+    135deg,
+    rgb(104, 139, 111) 0%,
+    rgba(225, 235, 228, 0.8) 100%
+  );
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  color: var(--text-light);
+}
+
+/* Контейнер */
+.about-wrap {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Ліва частина (текст) */
+.about-content {
+  flex: 1;
+  min-width: 350px;
+}
+
+.about-badge {
+  font-weight: bold;
+  font-size: 20px;
+  color: #f0f0f0;
+  font-style: italic;
+}
+
+.about-title {
+  color: #2c312da7;
+  font-size: 30px;
+  margin: 10px 0 20px;
+  line-height: 1.3;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-intro {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.about-quote {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* Картки з тезами */
+.about-features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.feature-card {
+  flex: 1 1 80px;
+  background: rgba(136, 152, 133, 0.407);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  position: relative;
+  transition: transform 0.2s ease;
+  max-width: 350px;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+}
+
+/* Декоративний фон картки */
+.feature-bg {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(90, 127, 113, 0.298);
+  top: -10px;
+  right: -10px;
+  z-index: 0;
+}
+
+/* Права частина (фото) */
+.about-media {
+  flex: 0 0 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.photo-frame img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Декоративні форми */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  background: #5a7f71;
+  top: -20px;
+  right: 20px;
+}
+.shape-2 {
+  width: 100px;
+  height: 100px;
+  background: #f9f6f1;
+  bottom: -30px;
+  left: -20px;
+}
+
+/* Кнопка запису */
+.about-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #5a7f71, #8fbf9f);
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.about-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #486155, #7aa88b);
+}
+
+
+/* ============================
+   6. Services Section
+============================ */
+#services{
+ margin:40px;
+ padding: 20px;
+ display: flex;
+ flex-wrap: wrap; /* дозволяє перенос */
+  gap: 20px;
+  justify-content: center; /* центрування */
+  box-sizing: border-box;
+  text-align: center;
+  max-width: 1200px; /* обмежуємо ширину */
+  margin: 0 auto;    /* центруємо по горизонталі */
+ }
+#services h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 30px 20px;
+}
+
+#services hr{
+  border: none;               /* прибираємо стандартну лінію */
+  height: 1px;                /* товщина лінії */
+  background-color: #5a7f71;  /* колір лінії */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9); /* тінь */
+  margin: 20px 0;             /* відступи зверху і знизу */
+  border-radius: 2px;         /* закруглення країв */
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* завжди 3 колонки */
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.service-card {
+  width: 100%;
+  max-width: 100%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card .icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.service-card p span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* ============================
+   7. Approach Section
+============================ */
+#approach {
+  padding: 70px 20px;
+  background: var(--beige);
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
+}
+
+#approach h2, #approach .intro {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#approach .intro {
+  font-size: 1.1rem;
+}
+.approach-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.approach-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  
+}
+.approach-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #dce4df;
+  padding: 20px;
+  
+}
+.step-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--accent-dark);
+  min-width: 30px;
+}
+.step-icon {
+  font-size: 26px;
+}
+.step-text span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* ============================
+   8. Contact Section
+============================ */
+#contact {
+  padding: 60px 20px;
+  background: var(--accent-light);
+  text-align: center;
+}
+#contact h2, #contact p {
+  margin-bottom: 15px;
+}
+.contact-info {
+  background: var(--white);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(210, 18, 18, 0.5);
+  display: inline-block;
+  position: relative;
+}
+.contact-info a {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+span{
+font-weight: bold;
+}
+
+.contact-info::after {
+  content: "";
+  position: absolute;
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(127, 190, 121, 0.2); /* чорний з прозорістю */
+  pointer-events: none; /* щоб кліки проходили крізь */
+}
+/* ============================
+   9. Footer
+============================ */
+footer {
+  background: var(--accent-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+}
+.telegram{
+height: 100px;
+}
+
+/* ============================
+   10. Responsive Settings
+============================ */
+@media (max-width: 1024px) {
+  .about-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .about-content, .about-media {
+    flex: 1 1 300px;
+  }
+  .about-title {
+    font-size: 28px;
+  }
+  .about-intro {
+    font-size: 16px;
+  }
+  .service-card, #approach .intro {
+    font-size: 0.95rem;
+  }
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    justify-content: center;
+  }
+  .about-quote {
+    font-size: 14px;
+  }
+  .about-media {
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* три колонки */
+    align-items: center;
+  }
+  .logo {
+    grid-column: 1;
+    justify-self: start; /* зліва */
+  }
+  .nav-links {
+    grid-column: 1 / 4; 
+    display: flex;
+    flex-direction: column; /* вертикально */
+    align-items: center; /* по центру */
+    gap: 10px;
+    margin-top: 10px;
+    justify-self: center; /* по центру */
+
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .lang-switch {
+    grid-column: 3;
+    justify-self: end; /* справа */
+  }
+  .about-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .about-title {
+    font-size: 24px;
+  }
+  .about-intro {
+    font-size: 14px;
+  }
+  .about-cta {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    justify-content: center;
+  }
+  #approach .intro {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+  .about-media {
+    flex: 0 0 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+
+
+
