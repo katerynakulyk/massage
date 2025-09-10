@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Масаж </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Хедер -->
+<header>
+    <div class="logo">
+      <img src="image/P_>.jpg" alt="Логотип Mykhalova Massage" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about" data-lang="about">О себе</a></li>
+        <li><a href="#services" data-lang="services">Услуги</a></li>
+        <li><a href="#approach" data-lang="approach">Подход</a></li>
+        <li><a href="#contact" data-lang="contact">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLang('ru')">RU</button> | 
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- Головний блок -->
+<section id="about" class="about-section">
+  <div class="about-wrap">
+
+    <!-- Ліва частина: текст -->
+    <div class="about-content">
+      <span class="about-badge" data-lang="about">О себе</span>
+
+      <h2 class="about-title" data-lang="about-hero">
+        Забота о теле — путь к лёгкости и энергии
+      </h2>
+
+      <p class="about-intro" data-lang="about-text">
+        Меня зовут Ирина, я <strong>профессиональный массажист</strong> и
+        <strong>специалист по телесной терапии</strong>. Помогаю снять боль и напряжение,
+        восстановить подвижность и вернуться к привычной активности.
+      </p>
+
+      <div class="about-quote" data-lang="about-quote">
+        «Я получила медицинское образование и закончила университет как учитель анатомии и физиологии человека. Это дало мне прочную базу знаний о том, как работает тело.<br> Сейчас я соединяю теорию и практику — чтобы помогать людям восстанавливать здоровье, снимать напряжение и находить лёгкость в движении.».
+      </div>
+
+     
+
+
+
+
+    </div>
+
+    <!-- Права частина: фото з декором -->
+    <div class="about-media">
+      <div class="photo-frame">
+        <img
+          src="image/att.zK-2sC_z4waIbFGL1Ft2hspHwVc1R_L8ykQquwSWJv4.jpg"
+          alt="Фото Ирины"
+          loading="lazy"
+        />
+      </div>
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+
+  </div>
+      
+ <!-- Картки з тезами -->
+      <div class="about-features">
+        <div class="feature-card">
+          <div class="icon">🔍</div>
+          <h3 data-lang="about-f1-title">Диагностика</h3>
+          <p data-lang="about-f1-text">Анализ осанки, мышечного баланса и фасций перед началом работы.</p>
+          <div class="feature-bg"></div> <!-- декоративний елемент -->
+        </div>
+        <div class="feature-card">
+          <div class="icon">🤲</div>
+          <h3 data-lang="about-f2-title">Комбинация техник</h3>
+          <p data-lang="about-f2-text">Классический, глубокотканный, фасциальный, кинезиологические приёмы.</p>
+          <div class="feature-bg"></div> <!-- декоративний елемент -->
+        </div>
+        <div class="feature-card">
+          <div class="icon">🏠</div>
+          <h3 data-lang="about-f3-title">Домашние упражнения</h3>
+          <p data-lang="about-f3-text">Короткие протоколы для закрепления эффекта и профилактики боли.</p>
+          <div class="feature-bg"></div> <!-- декоративний елемент -->
+        </div>
+      </div>
+
+    
+      <!-- Кнопка запису (тонка) -->
+      <a class="about-cta" href="https://bestill.timma.no/mykhalovamassasje" data-lang="hero-btn">
+        Записаться сейчас ✅
+      </a>
+</section>
+
+
+  <!-- Послуги -->
+ <section id="services">
+    <h2 data-lang="services">Услуги</h2>
+    <hr>
+    <br>
+    <div class="services-container">
+      <div class="service-card">
+        <div class="icon">💆‍♀️</div>
+        <h3 data-lang="service1-title">Классический массаж</h3>
+        <p data-lang="service1-text">Снимает <span>мышечное напряжение</span> и улучшает общее самочувствие.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🧘‍♂️</div>
+        <h3 data-lang="service2-title">Глубокотканный массаж</h3>
+        <p data-lang="service2-text">Прорабатывает <span>глубокие слои мышц</span> и фасций, помогает при хронических зажимах.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🤲</div>
+        <h3 data-lang="service3-title">Фасциальный массаж</h3>
+        <p data-lang="service3-text">Восстанавливает <span>подвижность тканей</span> и помогает скорректировать осанку.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💤</div>
+        <h3 data-lang="service4-title">Антистресс-массаж</h3>
+        <p data-lang="service4-text">Снимает <span>психоэмоциональное напряжение</span> и восстанавливает энергию.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔍</div>
+        <h3 data-lang="service5-title">Терапевтический массаж</h3>
+        <p data-lang="service5-text">По <span>диагностике тела</span> находит истинную причину боли и создаёт индивидуальный план.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🏋️‍♀️</div>
+        <h3 data-lang="service6-title">Массаж для спортсменов</h3>
+        <p data-lang="service6-text">Подготовка мышц к нагрузкам и восстановление после тренировок.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💧</div>
+        <h3 data-lang="service7-title">Лимфодренажный массаж</h3>
+        <p data-lang="service7-text">Эффективен при <span>отёках и нарушениях лимфотока</span>, ускоряет восстановление.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🌸</div>
+        <h3 data-lang="service8-title">Глубокий массаж лица</h3>
+        <p data-lang="service8-text">Естественный лифтинг, уменьшение отёков и улучшение тонуса кожи.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🧸</div>
+        <h3 data-lang="service9-title">Детский терапевтический массаж</h3>
+        <p data-lang="service9-text">Мягкая работа с телом ребёнка для снятия напряжения и коррекции осанки.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Мой подход -->
+<section id="approach">
+  <div class="approach-gallery">
+  <img src="image/Unknown-22.jpg" alt="1">
+  <img src="image/Unknown-4.jpg" alt="2">
+  <img src="image/Unknown-5.jpg" alt="3">
+</div>
+    <h2 data-lang="approach">Мой подход</h2>
+    <p class="intro" data-lang="approach-intro">Моя работа строится поэтапно, чтобы найти причину боли и вернуть лёгкость движений.</p>
+    <div class="approach-timeline">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-icon">🔍</div>
+        <div class="step-text" data-lang="step1">Начинаю с <span>диагностики тела</span> (анализ <span>постуры</span>, мышечного баланса, фасций).</div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-icon">💡</div>
+        <div class="step-text" data-lang="step2">Работаю не только там, где болит, а с <span>причиной проблемы</span>.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-icon">🤲</div>
+        <div class="step-text" data-lang="step3">Использую сочетание <span>разных техник</span>: глубокие, мягкие, фасциальные, кинезиологические.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-icon">🏠</div>
+        <div class="step-text" data-lang="step4">Даю <span>домашние упражнения</span> для закрепления результата.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-icon">❤️</div>
+        <div class="step-text" data-lang="step5">Гарантирую <span>индивидуальный и безопасный подход</span> к каждому клиенту.</div>
+      </div>
+    </div>
+    
+
+  </section>
+
+<!-- Роздільник -->
+<div class="section-divider"></div>
+
+
+  <!-- Контакты -->
+<section id="contact">
+    <h2 data-lang="contact">Контакты</h2>
+    <p data-lang="contact-text">Свяжитесь со мной для записи на сеанс массажа</p>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p>📞 <a href="tel:+4792569697">925 69 697</a></p>
+        <p><span>Telegram:</span> @painpointsthewaybot</p>
+        <img class="telegram" src="image/telegram.jpg" alt="telegram">
+        <p><span>Instagram:</span><a href="https://www.instagram.com/massasje_rogaland/" target="_blank">@massasje_rogaland</a></p>
+        <p>📍Gamle Forusveien 20, Stavanger, Norway 4031 </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Футер -->
+  <footer>
+    <p>&copy; 2025 Norway</p>
+  </footer>
+
+  <script src="lng.js"></script>
+</body>
+</html>
