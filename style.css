@@ -146,8 +146,7 @@ header .logo img {
 .about-wrap {
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -162,6 +161,7 @@ header .logo img {
   font-size: 20px;
   color: #f0f0f0;
   font-style: italic;
+  padding: 20px;
 }
 
 .about-title {
@@ -170,6 +170,7 @@ header .logo img {
   margin: 10px 0 20px;
   line-height: 1.3;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .about-intro {
@@ -186,52 +187,79 @@ header .logo img {
   text-align: justify;
 }
 
+.about-journey-intro {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.about-journey-list {
+  list-style: disc; /* крапки */
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-journey-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+
+
+
 /* Картки з тезами */
 .about-features {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* завжди 2 колонки */
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .feature-card {
-  flex: 1 1 80px;
+  position: relative;
   background: rgba(136, 152, 133, 0.407);
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  position: relative;
-  transition: transform 0.2s ease;
-  max-width: 350px;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .feature-card .icon {
-  font-size: 28px;
-  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent, #5a7f71);
+  margin-bottom: 1rem;
 }
 
 .feature-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent, #5a7f71);
 }
 
 .feature-card p {
-  font-size: 14px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text, #333);
 }
 
 /* Декоративний фон картки */
 .feature-bg {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  top: -50px;
+  right: -50px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: rgba(90, 127, 113, 0.298);
-  top: -10px;
-  right: -10px;
+  background: rgba(90, 127, 113, 0.08);
   z-index: 0;
 }
 
@@ -569,8 +597,142 @@ height: 100px;
     padding: 12px 24px;
     font-size: 14px;
   }
+  .about-features {
+    grid-template-columns: 2fr;
+  }
 }
 
 
 
+.about-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
+/* Основний блок: текст + фото */
+.about-main {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  /* flex-wrap: wrap; */ /* видалили, щоб колонки завжди були поруч */
+}
+
+.about-content {
+  flex: 1 1 50%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* по вертикалі всередині своєї колонки */
+}
+
+.about-media {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-frame img {
+  max-width: 100%;
+  border-radius: 10px;
+  height: auto;
+  
+}
+
+/* Картки */
+.about-features {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap; /* не дозволяємо переноситися */
+}
+
+.feature-card {
+  flex: 1 1 50%; /* дві картки в ряд */
+  min-width: 200px;
+  background: #f9f6f1;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Кнопка */
+.about-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #5a7f71;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Адаптивність для дуже маленьких екранів */
+@media (max-width: 768px) {
+  .about-main {
+    flex-direction: column; /* текст над фото */
+    align-items: stretch; /* текст і фото займають всю ширину */
+    gap: 1rem;
+  }
+
+  .about-content,
+  .about-media {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .about-content {
+    justify-content: flex-start; /* текст зверху */
+    text-align: left; /* або center за бажанням */
+  }
+
+  .photo-frame img {
+    width: 100%;
+    max-width: 400px; /* обмежуємо максимальний розмір фото */
+    margin: 0 auto;
+  }
+
+  .about-features {
+    flex-direction: row; /* завжди рядок */
+  }
+
+  .feature-card {
+    width: 50%;
+  }
+}
+
+/* Для дуже вузьких екранів (менше 500px) */
+@media (max-width: 500px) {
+  .about-main {
+    flex-direction: column; /* текст над фото */
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .about-content,
+  .about-media {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .about-content {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    min-width: 160px; /* картки не вилітають */
+    width: 50%; /* дві картки в ряд */
+  }
+}
